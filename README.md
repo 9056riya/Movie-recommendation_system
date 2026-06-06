@@ -138,7 +138,7 @@ The project includes:
 
 ## Movie Details
 
-<img src="screenshots/similarMovie.png" width="100%">
+<img src="images/similarMovie.png" width="100%">
 
 ## Recommendations
 
@@ -236,4 +236,4 @@ https://github.com/9056riya
 https://www.linkedin.com
 
 **Email:**  
-your-email@gmail.com
+riyamishra9056@gmail.com
