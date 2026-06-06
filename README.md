@@ -130,19 +130,20 @@ The project includes:
 
 ## Home Page
 
-<img src="screenshots/home.png" width="100%">
+<img src="images/homepage.png" width="100%">
 
 ## Movie Search
 
-<img src="screenshots/search.png" width="100%">
+<img src="images/search.png" width="100%">
 
 ## Movie Details
 
-<img src="screenshots/details.png" width="100%">
+<img src="screenshots/similarMovie.png" width="100%">
 
 ## Recommendations
 
-<img src="screenshots/recommendations.png" width="100%">
+<img src="images/genre.png" width="100%">
+<img src="images/morelikethis.png" width="100%">
 
 ---
 
