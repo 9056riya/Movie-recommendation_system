@@ -3,6 +3,14 @@
 ### TMDB Powered Movie Discovery & Recommendation Engine
 
 ---
+🚀 Live Demo
+Frontend (Streamlit)
+
+https://movie-recommendationsystem-temmjyknfti8gh8n7si9bk.streamlit.app/?view=home
+
+Backend API
+
+https://movie-recommendation-system-r6d3.onrender.com/docs
 
 # 📌 Table of Contents
 
@@ -18,33 +26,56 @@
 
 ---
 
+
+# 📌 Table of Contents
+
+* Project Overview
+* Business Objectives
+* Data Sources
+* Recommendation Engine
+* Tech Stack
+* Application Features
+* Project Structure
+* How to Run This Project
+* Future Improvements
+* Author & Contact
+
+---
+
 # 🎯 Project Overview
 
-This project implements an end-to-end Movie Recommendation System designed to help users:
+This project implements a full-stack Hybrid Movie Recommendation System capable of generating movie suggestions using multiple recommendation strategies.
 
-1. Search movies using TMDB API.
+Users can:
+
+1. Search movies from the TMDB database.
 2. Explore trending and popular movies.
-3. Get personalized movie recommendations.
-4. Discover similar movies using Machine Learning.
-5. View movie posters, ratings, genres, and details.
+3. Get recommendations using Content-Based Filtering.
+4. Receive recommendations using Collaborative Filtering.
+5. View movie posters, ratings, genres, and metadata.
+6. Access recommendations through a FastAPI backend and Streamlit frontend.
 
 ---
 
 # 🎯 Business Objectives
 
-## 1. Movie Recommendation
+## 1. Personalized Movie Discovery
+
+Help users discover movies matching their interests through machine learning-based recommendation techniques.
+
+## 2. Hybrid Recommendation Approach
 
 ### Content-Based Filtering
 
-- TF-IDF Vectorization
-- Cosine Similarity
-- Similar Movie Discovery
+* TF-IDF Vectorization
+* Cosine Similarity
+* Movie Metadata Analysis
 
-### Genre-Based Recommendation
+### Collaborative Filtering
 
-- TMDB Genre Metadata
-- Related Movie Suggestions
-- Trending Movies by Category
+* User Rating Analysis
+* Matrix Factorization
+* Latent Feature Learning
 
 ---
 
@@ -52,11 +83,13 @@ This project implements an end-to-end Movie Recommendation System designed to he
 
 The project uses:
 
-```text
+TMDB 5000 Movies Dataset
+
+TMDB 5000 Credits Dataset
+
+MovieLens Ratings Dataset
+
 TMDB API
-Movie Metadata Dataset
-TF-IDF Feature Matrix
-```
 
 ---
 
@@ -64,25 +97,41 @@ TF-IDF Feature Matrix
 
 ## Content-Based Recommendation
 
-The recommendation engine uses:
+Uses:
 
-- TF-IDF Vectorizer
-- Cosine Similarity
-- Movie Tags Processing
+* Movie overview
+* Genres
+* Cast
+* Crew
+* Keywords
 
-Final Recommendation Model:
+Algorithms:
 
-```text
-TF-IDF + Cosine Similarity
-```
+* TF-IDF Vectorizer
+* Cosine Similarity
 
-## Genre-Based Recommendation
+Model Files:
 
-Uses TMDB API to fetch:
+* tfidf.pkl
+* tfidf_matrix.pkl
+* indices.pkl
 
-- Similar Genre Movies
-- Trending Movies
-- Popular Movies
+---
+
+## Collaborative Filtering
+
+Uses user rating behavior to discover hidden movie preferences.
+
+Algorithms:
+
+* Matrix Factorization
+* Latent Feature Embeddings
+
+Model Files:
+
+* cf_movie_factors.pkl
+* cf_movie_ids.pkl
+* cf_movies_df.pkl
 
 ---
 
@@ -90,80 +139,157 @@ Uses TMDB API to fetch:
 
 ## Frontend
 
-- Streamlit
+* Streamlit
 
 ## Backend
 
-- FastAPI
-- Uvicorn
+* FastAPI
+* Uvicorn
 
 ## Machine Learning
 
-- Scikit-Learn
-- TF-IDF Vectorizer
-- Cosine Similarity
+* Scikit-Learn
+* TF-IDF Vectorizer
+* Cosine Similarity
+* Collaborative Filtering
 
 ## Data Processing
 
-- Pandas
-- NumPy
+* Pandas
+* NumPy
 
-## External API
+## External APIs
 
-- TMDB API
+* TMDB API
 
----
+## Deployment
 
-# 📊 Application
-
-The project includes:
-
-- 🎬 Movie Search
-- 🔥 Trending Movies
-- ⭐ Popular Movies
-- 🤖 TF-IDF Recommendations
-- 🎭 Genre Recommendations
+* Streamlit Community Cloud
+* Render
 
 ---
 
+# 📊 Application Features
+
+* 🎬 Movie Search
+* 🔥 Trending Movies
+* ⭐ Popular Movies
+* 🤖 Content-Based Recommendations
+* 👥 Collaborative Filtering Recommendations
+* 🎭 Genre-Based Discovery
+* 🖼️ TMDB Poster Integration
+* ⚡ FastAPI Backend APIs
+
+---
 # 📸 Screenshots
 
-## Home Page
+## 🏠 Home Page
 
 <img src="images/homepage.png" width="100%">
 
-## Movie Search
+---
+
+## 🔍 Movie Search
 
 <img src="images/search.png" width="100%">
 
-## Movie Details
+---
 
-<img src="images/similarMovie.png" width="100%">
 
-## Recommendations
+## 🤖 Content-Based Recommendations
 
-<img src="images/genre.png" width="100%">
-<img src="images/morelikethis.png" width="100%">
+<img src="images/content_based.png" width="100%">
 
 ---
 
+## 👥 Collaborative Filtering Recommendations
+
+<img src="images/collaborative.png" width="100%">
+
+---
+## 🔥 Hybrid Recommendations
+
+<img src="images/Hybrid.png" width="100%">
+
+---
+## 🔥 Genre based Recommendations
+
+<img src="images/genre.png" width="100%">
+
 # 📁 Project Structure
 
-```text
 Movie_recommendation_system/
 
+├── Data/
+
 ├── models/
-│   ├── df.pkl
-│   ├── indices.pkl
-│   ├── tfidf.pkl
-│   └── tfidf_matrix.pkl
-│
+
+│ ├── tfidf.pkl
+
+│ ├── tfidf_matrix.pkl
+
+│ ├── indices.pkl
+
+│ ├── df.pkl
+
+│ ├── cf_movie_factors.pkl
+
+│ ├── cf_movie_ids.pkl
+
+│ └── cf_movies_df.pkl
+
+├── Notebooks/
+
+│ ├── content_based.ipynb
+
+│ └── collaborative_method.ipynb
+
+├── images/
+
 ├── app.py
+
 ├── main.py
+
 ├── requirements.txt
-├── .env
+
 └── README.md
-```
+
+---
+
+```md
+# 🎮 How to Use
+
+### Step 1
+
+Open the deployed application.
+
+### Step 2
+
+Search for a movie such as:
+
+- Interstellar
+- Inception
+- The Dark Knight
+
+### Step 3
+
+View movie information including:
+
+- Poster
+- Rating
+- Genres
+- Overview
+
+### Step 4
+
+Generate recommendations using:
+
+- Content-Based Filtering
+- Collaborative Filtering
+
+### Step 5
+
+Explore trending and popular movies.
 
 ---
 
@@ -214,14 +340,14 @@ streamlit run app.py
 ```
 
 ---
-
 # 🚀 Future Improvements
 
-- User Authentication
-- Watchlist Feature
-- Hybrid Recommendation System
-- Collaborative Filtering
-- Cloud Deployment
+* Hybrid Weighted Recommendation Engine
+* User Authentication
+* Watchlist System
+* Recommendation Explanations
+* Deep Learning Based Recommendations
+* Personalized User Profiles
 
 ---
 
@@ -237,3 +363,24 @@ https://www.linkedin.com
 
 **Email:**  
 riyamishra9056@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
